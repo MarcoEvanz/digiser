@@ -1,0 +1,37 @@
+"""
+URL configuration for digiser project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+#from quantum import views
+from homepage import views
+urlpatterns = [
+    #path('admin/', admin.site.urls),
+    #path('insert/', views.insert_data, name='insert'),
+    #path('project/',views.project,name='project'),
+    #path('user/',views.user,name='user'),
+    #path('user/',views.insert_user,name='test'),
+    #path('login/',views.login,name='login'),
+    #path('register/',views.register,name='login'),
+    path('home/',views.home,name='home'),
+    path('check/',views.check,name='check'),
+    path('insert/',views.insert,name='insert'),
+    path('support/',views.support,name='support'),
+    path('system/',views.system,name='system'),
+    path('wiki/',views.wiki,name='wiki'),
+    path('courses/',views.courses,name='courses'),
+]
+

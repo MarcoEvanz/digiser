@@ -1,0 +1,49 @@
+{% extends 'bases/base.html' %}
+
+{% block content %}
+<div class="container-sm">
+    <div class="d-flex justify-content-center mb-4">
+            <div class="col-4">
+              <form method="post" action="{% url 'project'%}">
+                {% csrf_token %}        
+                <center>   
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="project">Project</label>
+                    <input type="text" class="form-control" name="project" placeholder="Enter your Project Name">
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="subproject" >Sub Project</label>
+                    <input type="text" class="form-control" name="subproject" placeholder="Enter your Sub Project Name">
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="description" >Description</label>
+                    <input type="text" class="form-control" name="description" placeholder="Enter your description">
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="text-align:center">Add</button>
+                </center>   
+              </form>
+            </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" style="text-align:center">#</th>
+                <th scope="col">Project Name</th>
+                <th scope="col">Sub Project</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects %}
+                <tr>
+                    <th scope="row" style="text-align:center">{{forloop.counter}}</th>
+                    <td>{{project.project_name}}</td>
+                    <td>{{project.sub_project_name}}</td>
+                    <td>{{project.project_description}}</td>                
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
