@@ -42,12 +42,14 @@
     </style>
   </head>
   <body>
+    
     <!-- Add Navigation Bar -->
     {% include 'bases/nav.html'%}
 
     <!-- Add Block Container Page -->
     <div class="home">
       <div class="mainPage">
+        {% include 'bases/headnav.html' %}
         {% block content %}
         {% endblock %}
       </div>
